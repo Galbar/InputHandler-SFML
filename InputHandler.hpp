@@ -1,5 +1,5 @@
-#ifndef SFML_INPUT_DISABLER_HPP
-#define SFML_INPUT_DISABLER_HPP
+#ifndef SFML_INPUT_HANDLER_HPP
+#define SFML_INPUT_HANDLER_HPP
 #include <unordered_map>
 #include <SFML/Window.hpp>
 #include "hash_pair.hpp"

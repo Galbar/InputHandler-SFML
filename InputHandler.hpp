@@ -14,7 +14,13 @@ public:
 		int x;
 		int y;
 	};
-	InputHandler(){}
+	InputHandler()
+	{
+		auto p = sf::Mouse::getPosition();
+		p_current_mouse_info.x = p.x;
+		p_current_mouse_info.y = p.y;
+		p_previous_mouse_info = p_current_mouse_info;
+	}
 	~InputHandler(){}
 
 	void update()

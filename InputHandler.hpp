@@ -16,10 +16,12 @@ public:
 	};
 	InputHandler()
 	{
+		#if !(INPUT_DISABLE_MOUSE)
 		auto p = sf::Mouse::getPosition();
 		p_current_mouse_info.x = p.x;
 		p_current_mouse_info.y = p.y;
 		p_previous_mouse_info = p_current_mouse_info;
+		#endif
 	}
 	~InputHandler(){}
 
@@ -341,6 +343,5 @@ private:
 	std::unordered_map<std::pair<unsigned int, unsigned int>, bool> p_joystick_button_released;
 	std::unordered_map<std::pair<unsigned int, unsigned int>, float> p_joystick_axis_position;
 #endif
-
 };
 #endif

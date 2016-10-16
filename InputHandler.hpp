@@ -151,7 +151,7 @@ private:
 #if !(INPUT_DISABLE_KEYBOARD)
 	void keyUpdate()
 	{
-		for (auto it : p_key_pressed)
+		for (auto& it : p_key_pressed)
 		{
 			if (it.second)
 			{
@@ -160,7 +160,7 @@ private:
 			}
 		}
 
-		for (auto it : p_key_released)
+		for (auto& it : p_key_released)
 		{
 			if (it.second)
 				it.second = false;
@@ -195,7 +195,7 @@ private:
 	{
 		p_mouse_move_event = false;
 
-		for (auto it : p_mouse_button_pressed)
+		for (auto& it : p_mouse_button_pressed)
 		{
 			if (it.second)
 			{
@@ -204,7 +204,7 @@ private:
 			}
 		}
 
-		for (auto it : p_mouse_button_released)
+		for (auto& it : p_mouse_button_released)
 		{
 			if (it.second)
 				it.second = false;
@@ -265,7 +265,7 @@ private:
 #if !(INPUT_DISABLE_JOYSTICK)
 	void joystickUpdate()
 	{
-		for (auto it : p_joystick_button_pressed)
+		for (auto& it : p_joystick_button_pressed)
 		{
 			if (it.second)
 			{
@@ -274,13 +274,13 @@ private:
 			}
 		}
 
-		for (auto it : p_joystick_button_released)
+		for (auto& it : p_joystick_button_released)
 		{
 			if (it.second)
 				it.second = false;
 		}
 
-		for (auto it : p_joystick_connected)
+		for (auto& it : p_joystick_connected)
 		{
 			if (it.second)
 			{
@@ -289,7 +289,7 @@ private:
 			}
 		}
 
-		for (auto it : p_joystick_disconnected)
+		for (auto& it : p_joystick_disconnected)
 		{
 			if (it.second)
 				it.second = false;

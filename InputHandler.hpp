@@ -151,19 +151,19 @@ private:
 #if !(INPUT_DISABLE_KEYBOARD)
 	void keyUpdate()
 	{
-		for (auto it = p_key_pressed.begin(); it != p_key_pressed.end(); ++it)
+		for (auto& it : p_key_pressed)
 		{
-			if (it->second)
+			if (it.second)
 			{
-				p_key_down[it->first] = true;
-				it->second = false;
+				p_key_down[it.first] = true;
+				it.second = false;
 			}
 		}
 
-		for (auto it = p_key_released.begin(); it != p_key_released.end(); ++it)
+		for (auto& it : p_key_released)
 		{
-			if (it->second)
-				it->second = false;
+			if (it.second)
+				it.second = false;
 		}
 	}
 
@@ -195,19 +195,19 @@ private:
 	{
 		p_mouse_move_event = false;
 
-		for (auto it = p_mouse_button_pressed.begin(); it != p_mouse_button_pressed.end(); ++it)
+		for (auto& it : p_mouse_button_pressed)
 		{
-			if (it->second)
+			if (it.second)
 			{
-				p_mouse_button_down[it->first] = true;
-				it->second = false;
+				p_mouse_button_down[it.first] = true;
+				it.second = false;
 			}
 		}
 
-		for (auto it = p_mouse_button_released.begin(); it != p_mouse_button_released.end(); ++it)
+		for (auto& it : p_mouse_button_released)
 		{
-			if (it->second)
-				it->second = false;
+			if (it.second)
+				it.second = false;
 		}
 
 		if (p_mouse_wheel_scrolled)
@@ -265,34 +265,34 @@ private:
 #if !(INPUT_DISABLE_JOYSTICK)
 	void joystickUpdate()
 	{
-		for (auto it = p_joystick_button_pressed.begin(); it != p_joystick_button_pressed.end(); ++it)
+		for (auto& it : p_joystick_button_pressed)
 		{
-			if (it->second)
+			if (it.second)
 			{
-				p_joystick_button_down[it->first] = true;
-				it->second = false;
+				p_joystick_button_down[it.first] = true;
+				it.second = false;
 			}
 		}
 
-		for (auto it = p_joystick_button_released.begin(); it != p_joystick_button_released.end(); ++it)
+		for (auto& it : p_joystick_button_released)
 		{
-			if (it->second)
-				it->second = false;
+			if (it.second)
+				it.second = false;
 		}
 
-		for (auto it = p_joystick_connected.begin(); it != p_joystick_connected.end(); ++it)
+		for (auto& it : p_joystick_connected)
 		{
-			if (it->second)
+			if (it.second)
 			{
-				p_joystick_active[it->first] = true;
-				it->second = false;
+				p_joystick_active[it.first] = true;
+				it.second = false;
 			}
 		}
 
-		for (auto it = p_joystick_disconnected.begin(); it != p_joystick_disconnected.end(); ++it)
+		for (auto& it : p_joystick_disconnected)
 		{
-			if (it->second)
-				it->second = false;
+			if (it.second)
+				it.second = false;
 		}
 	}
 
